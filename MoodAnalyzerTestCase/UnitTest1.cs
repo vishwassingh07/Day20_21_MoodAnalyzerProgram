@@ -60,5 +60,15 @@ namespace MoodAnalyzerTestCase
             string msg = moodanalyzer.AnalyzeMood();
             Assert.AreEqual("HAPPY", msg);
         }
+        /// <summary>
+        /// TC2.1 : Given : Null Mood Should Return Happy
+        /// </summary>
+        [Test]
+        public void GivenMessage_WhenNull_ShouldReturnHappy()
+        {
+            moodanalyzer = new MoodAnalyzer();
+            string msg = moodanalyzer.AnalyzeMood();
+            Assert.AreEqual("HAPPY", msg);
+        }
     }
 }

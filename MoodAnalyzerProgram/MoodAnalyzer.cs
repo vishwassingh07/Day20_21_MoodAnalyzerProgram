@@ -19,7 +19,8 @@ namespace MoodAnalyzerProgram
         {
             this.message = message;
         }
-        public string AnalyzeMood()
+      
+        public string AnalyzeMoodWithoutConstructor(string message)
         {
             if (message.ToLower().Contains("sad"))
             {
@@ -30,13 +31,20 @@ namespace MoodAnalyzerProgram
                 return "HAPPY";
             }
         }
-        public string AnalyzeMoodWithoutConstructor(string message)
+        public string AnalyzeMood()
         {
-            if (message.ToLower().Contains("sad"))
+            try
             {
-                return "SAD";
+                if (message.ToLower().Contains("sad"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else
+            catch(NullReferenceException)
             {
                 return "HAPPY";
             }
